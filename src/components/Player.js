@@ -9,7 +9,7 @@ const Player = (props) => {
   return (
     <div className="item">
         <div className="ui content">
-          <a className="header">{props.player.first_name} {props.player.last_name}</a>
+          <strong className="header">{props.player.first_name} {props.player.last_name}</strong>
           <div className="description">
             Team: {props.player.team} |
             Position: {props.player.position} |
