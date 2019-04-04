@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import reducer from "./reducer"
+import 'semantic-ui-css/semantic.min.css'
 
 const store = createStore(reducer)
 

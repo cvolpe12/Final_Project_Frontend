@@ -4,7 +4,7 @@ import UserTeamContainer from "./UserTeamContainer"
 
 const LeagueContainer = () => {
   return (
-  <div className="">
+  <div className="league-container">
     <PlayerContainer />
     <UserTeamContainer />
   </div>

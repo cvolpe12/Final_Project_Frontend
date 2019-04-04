@@ -1,11 +1,48 @@
 import React from "react"
+import Player from "../components/Player"
+import PlayerForm from "../components/PlayerForm"
+import { connect } from "react-redux"
 
-const PlayerContainer = () => {
-  return (
-  <div className="">
-    player
-  </div>
-  )
+class PlayerContainer extends React.Component {
+
+  componentDidMount() {
+    fetch("http://localhost:3000/api/v1/players")
+      .then(res => res.json())
+      .then(players => {
+        this.props.addPlayers(players)
+      })
+  }
+
+  renderPlayers = () => {
+    console.log(this.props.players.length);
+    return this.props.players.map(player => {
+      return <Player key={player.id} player={player}/>
+    })
+  }
+
+  render() {
+    return (
+    <div className="player-container">
+      Player Container
+      <PlayerForm />
+      <div className="player-list">
+        {this.renderPlayers()}
+      </div>
+    </div>
+    )
+  }
 }
 
-export default PlayerContainer
+function mapStateToProps(state){
+  return {
+    players: state.players
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    addPlayers: (players) => {dispatch({type: "ADD_PLAYERS", payload: players })}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerContainer)

@@ -1,12 +1,12 @@
 
 const initialState = {
-  user: "me"
+  players: []
 }
 
 function reducer(state = initialState, action){
   switch (action.type) {
-    case "CHANGE_USER":
-      return {...state, user: action.payload}
+    case "ADD_PLAYERS":
+      return {...state, players: action.payload}
     default:
       return state
   }
