@@ -1,13 +1,17 @@
 
 const initialState = {
-  players: [],
-  currentlyDisplayed: []
+  allPlayers: [],
+  currentlyDisplayed: [],
+  team: []
 }
 
 function reducer(state = initialState, action){
   switch (action.type) {
-    case "ADD_PLAYERS":
-      return {...state, players: action.payload}
+    case "GET_PLAYERS":
+      return {...state, allPlayers: action.payload}
+    case "ADD_PLAYER_TO_TEAM":
+      return {...state, team: [...state.team, action.payload]}
+      break;
     case "SEARCH_PLAYERS":
       return {...state, currentlyDisplayed: action.payload}
     default:

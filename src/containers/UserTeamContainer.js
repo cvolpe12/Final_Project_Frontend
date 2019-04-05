@@ -1,6 +1,10 @@
 import React from "react"
+import { connect } from "react-redux"
 
-const UserTeamContainer = () => {
+const UserTeamContainer = (props) => {
+
+
+  console.log(props)
   return (
   <div className="">
   user team
@@ -8,4 +12,10 @@ const UserTeamContainer = () => {
   )
 }
 
-export default UserTeamContainer
+function mapStateToProps(state){
+  return {
+    team: state.team
+  }
+}
+
+export default connect(mapStateToProps)(UserTeamContainer)

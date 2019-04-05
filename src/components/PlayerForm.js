@@ -6,8 +6,6 @@ class PlayerForm extends React.Component {
   searchPlayers = e => {
     e.preventDefault()
     console.log(e.target.value);
-    // debugger
-    // let searched = this.props.players.filter(player => player.includes(e.target.value))
   }
 
   render() {
@@ -21,17 +19,17 @@ class PlayerForm extends React.Component {
   }
 }
 
-// function mapStateToProps(state){
-//   return {
-//     players: state.players
-//   }
-// }
-//
-// function mapDispatchToProps(dispatch){
-//   return {
-//     addPlayers: (players) => {dispatch({type: "ADD_PLAYERS", payload: players })}
-//   }
-// }
+function mapStateToProps(state){
+  return {
+    players: state.players
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    addPlayers: (players) => {dispatch({type: "ADD_PLAYERS", payload: players })}
+  }
+}
 // connect(mapStateToProps, mapDispatchToProps)
 
-export default (PlayerForm)
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerForm)

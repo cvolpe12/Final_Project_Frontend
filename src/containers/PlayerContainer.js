@@ -14,8 +14,8 @@ class PlayerContainer extends React.Component {
   }
 
   renderPlayers = () => {
-    console.log(this.props.players.length);
-    return this.props.players.map(player => {
+    console.log(this.props.allPlayers.length);
+    return this.props.allPlayers.map(player => {
       return <Player key={player.id} player={player}/>
     })
   }
@@ -35,13 +35,13 @@ class PlayerContainer extends React.Component {
 
 function mapStateToProps(state){
   return {
-    players: state.players
+    allPlayers: state.allPlayers
   }
 }
 
 function mapDispatchToProps(dispatch){
   return {
-    addPlayers: (players) => {dispatch({type: "ADD_PLAYERS", payload: players })}
+    addPlayers: (players) => {dispatch({type: "GET_PLAYERS", payload: players })}
   }
 }
 
