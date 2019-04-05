@@ -14,10 +14,17 @@ class PlayerContainer extends React.Component {
   }
 
   renderPlayers = () => {
-    console.log(this.props.allPlayers.length);
-    return this.props.allPlayers.map(player => {
-      return <Player key={player.id} player={player}/>
-    })
+    console.log(this.props);
+    if (this.props.currentlyDisplayed.length > 0) {
+      return this.props.currentlyDisplayed.map(player => {
+        return <Player key={player.id} player={player}/>
+      })
+    }
+    else {
+      return this.props.allPlayers.map(player => {
+        return <Player key={player.id} player={player}/>
+      })
+    }
   }
 
   render() {
@@ -35,7 +42,8 @@ class PlayerContainer extends React.Component {
 
 function mapStateToProps(state){
   return {
-    allPlayers: state.allPlayers
+    allPlayers: state.allPlayers,
+    currentlyDisplayed: state.currentlyDisplayed
   }
 }
 

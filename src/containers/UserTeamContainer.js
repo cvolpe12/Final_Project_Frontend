@@ -10,8 +10,8 @@ class UserTeamContainer extends React.Component {
       .then(res => res.json())
       .then(team => {
         console.log(team.players);
-        team.players.map(player => {
-          this.props.addPlayerToTeam(player)
+        return team.players.map(player => {
+          return this.props.addPlayerToTeam(player)
         })
       })
   }
