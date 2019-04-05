@@ -11,7 +11,6 @@ function reducer(state = initialState, action){
       return {...state, allPlayers: action.payload}
     case "ADD_PLAYER_TO_TEAM":
       return {...state, team: [...state.team, action.payload]}
-      break;
     case "SEARCH_PLAYERS":
       return {...state, currentlyDisplayed: action.payload}
     default:
