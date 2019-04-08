@@ -1,5 +1,6 @@
 import React from "react";
 import UserInfo from "../components/UserInfo"
+import UserLeagues from "../components/UserLeagues"
 
 class UserContainer extends React.Component {
 
@@ -8,6 +9,10 @@ class UserContainer extends React.Component {
       <div>
         <h1>User</h1>
         <UserInfo />
+        <br/>
+        <UserLeagues />
+        <p>history of games</p>
+        <p>suggested leagues </p>
       </div>
     )
   }

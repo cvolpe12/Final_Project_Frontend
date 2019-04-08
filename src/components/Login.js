@@ -76,7 +76,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    setCurrentUser: (user) => {dispatch({type: "SET_CURRENT_USERE", payload: user })}
+    setCurrentUser: (user) => {dispatch({type: "SET_CURRENT_USER", payload: user })}
   }
 }
 

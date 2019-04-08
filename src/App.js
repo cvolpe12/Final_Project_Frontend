@@ -10,6 +10,7 @@ import { connect } from "react-redux"
 class App extends Component {
 
   componentDidMount() {
+    debugger
 		const jwt = localStorage.getItem('jwt')
 		if (jwt){
 			fetch("http://localhost:3000/api/v1/auto_login", {
