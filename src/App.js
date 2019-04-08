@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
 		const jwt = localStorage.getItem('jwt')
 		if (jwt){
-			fetch("http://localhost:3001/api/v1/auto_login", {
+			fetch("http://localhost:3000/api/v1/auto_login", {
 				headers: {
 					"Authorization": jwt
 				}
@@ -36,11 +36,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Login />
-        <UserContainer />
-        <LeagueContainer />
-      </div>
+      <Grid>
+        <Grid.Row centered>
+          <Switch>
+            <Route path="/" exact render={routerProps =>  <Login {...routerProps}/>} />
+            <Route path="/users/:id" render={routerProps => <UserContainer {...routerProps}/>} />
+            <Route path="/leagues/:id" component={routerProps => <LeagueContainer {...routerProps}/>} />
+          </Switch>
+        </Grid.Row>
+      </Grid>
     );
   }
 }

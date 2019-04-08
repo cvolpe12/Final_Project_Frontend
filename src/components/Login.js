@@ -16,6 +16,8 @@ class Login extends React.Component {
 	}
 
   handleSubmit = e => {
+
+    e.preventDefault()
     fetch("http://localhost:3000/api/v1/login", {
 			method: "POST",
 			headers: {
@@ -32,9 +34,10 @@ class Login extends React.Component {
 			} else {
 					// we need to login at the top level where we are holding our current user!
 					// setState in App to currentuser
+          debugger
 					this.props.setCurrentUser(response.user)
 					localStorage.setItem('jwt', response.jwt)
-					// this.props.history.push(`/users/${response.user.id}`)
+					this.props.history.push(`/users/${response.user.id}`)
 				}
 			})
 	}
