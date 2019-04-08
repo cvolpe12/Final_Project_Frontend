@@ -2,7 +2,8 @@
 const initialState = {
   allPlayers: [],
   currentlyDisplayed: [],
-  team: []
+  team: [],
+  league: ""
 }
 
 function reducer(state = initialState, action){
@@ -15,6 +16,8 @@ function reducer(state = initialState, action){
       return {...state, currentlyDisplayed: action.payload}
     case "FILTER_POSITIONS":
       return {...state, currentlyDisplayed: action.payload}
+    case "SET_LEAGUE":
+      return {...state, league: action.payload}
     default:
       return state
   }
