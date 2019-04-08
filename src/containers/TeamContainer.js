@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import Team from "../components/Team"
 
-class UserTeamContainer extends React.Component {
+class TeamContainer extends React.Component {
 
   componentDidMount() {
     // need to use team id for this part - currently hardcoding 1
@@ -50,4 +50,4 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserTeamContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(TeamContainer)

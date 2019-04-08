@@ -8,7 +8,6 @@ class LeagueInformation extends React.Component {
     fetch("http://localhost:3000/api/v1/leagues/1")
       .then(res=>res.json())
       .then(league => {
-        console.log(league);
         this.props.setLeague(league)
       })
   }

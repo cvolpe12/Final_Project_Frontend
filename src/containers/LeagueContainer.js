@@ -1,6 +1,6 @@
 import React from "react"
 import PlayerContainer from "./PlayerContainer"
-import UserTeamContainer from "./UserTeamContainer"
+import TeamContainer from "./TeamContainer"
 import LeagueInformation from "../components/LeagueInformation"
 
 const LeagueContainer = () => {
@@ -9,7 +9,7 @@ const LeagueContainer = () => {
     <LeagueInformation />
     <br/>
     <PlayerContainer />
-    <UserTeamContainer />
+    <TeamContainer />
   </div>
   )
 }
