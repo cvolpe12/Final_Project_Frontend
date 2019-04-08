@@ -1,7 +1,7 @@
 import React from "react"
 import PlayerContainer from "./PlayerContainer"
 import UserTeamContainer from "./UserTeamContainer"
-import LeagueInformation from "./LeagueInformation"
+import LeagueInformation from "../components/LeagueInformation"
 
 const LeagueContainer = () => {
   return (
