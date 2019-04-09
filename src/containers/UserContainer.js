@@ -7,7 +7,7 @@ class UserContainer extends React.Component {
   render() {
     return (
       <div>
-        <h1>User</h1>
+        <h1>User Page</h1>
         <UserInfo />
         <br/>
         <UserLeagues />
