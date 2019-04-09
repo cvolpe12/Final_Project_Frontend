@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import { Grid } from 'semantic-ui-react'
 import LeagueContainer from "./containers/LeagueContainer"
 import UserContainer from "./containers/UserContainer"
+import CreateLeagueForm from "./components/CreateLeagueForm"
 import Login from "./components/Login"
 import { connect } from "react-redux"
 
@@ -42,6 +43,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact render={routerProps =>  <Login {...routerProps}/>} />
             <Route path="/users/:id" render={routerProps => <UserContainer {...routerProps}/>} />
+            <Route path="/leagues/create" exact component={routerProps => <CreateLeagueForm {...routerProps}/>} />
             <Route path="/leagues/:id" component={routerProps => <LeagueContainer {...routerProps}/>} />
           </Switch>
         </Grid.Row>

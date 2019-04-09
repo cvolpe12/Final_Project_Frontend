@@ -16,7 +16,6 @@ class Login extends React.Component {
 	}
 
   handleSubmit = e => {
-
     e.preventDefault()
     fetch("http://localhost:3000/api/v1/login", {
 			method: "POST",
