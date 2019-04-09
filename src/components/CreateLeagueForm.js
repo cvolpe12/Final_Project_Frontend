@@ -10,7 +10,6 @@ class CreateLeagueForm extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log(this.props);
 		this.setState({
 			[e.target.name]: e.target.value
 		})
@@ -25,6 +24,7 @@ class CreateLeagueForm extends React.Component {
   handleSubmit = e => {
     console.log(this.state);
     let gameDate = this.state.dateOfGames.split("-").join("")
+    console.log("gameDate", gameDate);
     e.preventDefault()
     fetch("http://localhost:3000/api/v1/leagues", {
 			method: "POST",
@@ -41,10 +41,10 @@ class CreateLeagueForm extends React.Component {
       })
 		})
 		.then(res => res.json())
-    .then((response) => {
-      console.log(response);
+    .then(league => {
+      console.log(league);
       debugger
-      this.props.history.push(`/leagues/${response.league.id}`)
+      this.props.history.push(`/leagues/${league.id}`)
     })
   }
 
