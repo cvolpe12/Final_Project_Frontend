@@ -3,28 +3,48 @@ import { connect } from "react-redux"
 
 class Player extends React.Component {
 
-  // const playerName = () => {
-  //   return `${this.props.player.first_name} ` + `${this.props.player.last_name}`
-  // }
+
+// if player is not on team then fetch
+// else alert player on team
+  playerOnTeam = () => {
+    console.log(this.props.player);
+    if (Object.values(this.props.team).indexOf(this.props.player) > -1){
+      return true
+    }
+    else {
+      return false
+    }
+    // console.log(this.props.team.includes(this.props.player));
+    // return this.props.team.includes(this.props.player)
+    // Object.keys(this.props.team).forEach( position => {
+    //   console.log(position);
+    //   console.log(this.props.team[position] === this.props.player);
+    //   return this.props.team[position] === this.props.player
+    // })
+  }
 
   addToTeam = e => {
-    e.preventDefault()
-    console.log(this.props.player);
-    // console.log(e.target.value)
-    // this.props.addPlayerToTeam(this.props.player)
-    fetch('http://localhost:3000/api/v1/drafts', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        "team_id": this.props.currentUser.id,
-        "player_id": this.props.player.id
+    if (this.playerOnTeam() === false) {
+      e.preventDefault()
+      // console.log(this.props.player);
+      // console.log(e.target.value)
+      // this.props.addPlayerToTeam(this.props.player)
+      fetch('http://localhost:3000/api/v1/drafts', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          "team_id": this.props.currentUser.id,
+          "player_id": this.props.player.id
+        })
       })
-    })
-    .then(res => res.json())
-    this.addPlayerToTeam(this.props.player)
+      .then(res => res.json())
+      this.addPlayerToTeam(this.props.player)
+    } else {
+      alert("Player is on your team.")
+    }
   }
 
   addPlayerToTeam = player => {

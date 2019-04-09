@@ -6,7 +6,7 @@ class Team extends React.Component {
   renderPlayerInfo = player => {
     if (player) {
       // debugger
-      console.log(this.props.team);
+      // console.log(this.props.team);
       return (
         <div className="ui content">
           <strong className="header">{player.first_name} {player.last_name}</strong>
