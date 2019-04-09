@@ -6,6 +6,17 @@ class PlayerForm extends React.Component {
   searchPlayers = e => {
     e.preventDefault()
     console.log(e.target.value);
+    let filterFirstNames = this.props.allPlayers.filter(player => player.first_name.toLowerCase().includes(e.target.value.toLowerCase()))
+    let filterLastNames = this.props.allPlayers.filter(player => player.last_name.toLowerCase().includes(e.target.value.toLowerCase()))
+    let filterTeams = this.props.allPlayers.filter(player => player.team.toLowerCase().includes(e.target.value.toLowerCase()))
+    let filterPlayers = filterFirstNames.concat(filterLastNames, filterTeams)
+    let uniqFilter = [...new Set(filterPlayers)]
+    // console.log("first", filterFirstNames);
+    // console.log("last", filterLastNames);
+    // console.log("team", filterTeams);
+    // console.log(filterPlayers);
+    // console.log("uniq", uniqFilter);
+    this.props.filterPlayers(uniqFilter)
   }
 
   filterPlayerPosition = e => {

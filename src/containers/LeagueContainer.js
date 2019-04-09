@@ -3,10 +3,10 @@ import PlayerContainer from "./PlayerContainer"
 import TeamContainer from "./TeamContainer"
 import LeagueInformation from "../components/LeagueInformation"
 
-const LeagueContainer = () => {
+const LeagueContainer = (props) => {
   return (
   <div className="league-container">
-    <LeagueInformation />
+    <LeagueInformation {...props}/>
     <br/>
     <PlayerContainer />
     <TeamContainer />
