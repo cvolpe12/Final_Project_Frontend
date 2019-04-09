@@ -21,6 +21,7 @@ class PlayerContainer extends React.Component {
       })
     }
     else {
+      // alert("No players found by your query")
       return this.props.allPlayers.map(player => {
         return <Player key={player.id} player={player}/>
       })
@@ -42,6 +43,7 @@ class PlayerContainer extends React.Component {
 
 function mapStateToProps(state){
   return {
+    currentUser: state.currentUser,
     allPlayers: state.allPlayers,
     currentlyDisplayed: state.currentlyDisplayed
   }

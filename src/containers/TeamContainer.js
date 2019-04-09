@@ -9,7 +9,7 @@ class TeamContainer extends React.Component {
     fetch("http://localhost:3000/api/v1/teams/1")
       .then(res => res.json())
       .then(team => {
-        console.log(team.players);
+        // console.log(team.players);
         return team.players.map(player => {
           return this.props.addPlayerToTeam(player)
         })
@@ -24,14 +24,14 @@ class TeamContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
     <div className="">
     user team
     <br/>
     <br/>
       <div className="player-list">
-        {this.renderTeam()}
+        <Team />
       </div>
     </div>
     )

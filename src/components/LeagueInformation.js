@@ -8,7 +8,7 @@ class LeagueInformation extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this.props);
+    // console.log(this.props);
     // debugger
     // need to change fetch to match league id -- hardcoded right now
     let id = this.props.match.params.id
