@@ -141,7 +141,7 @@ class Player extends React.Component {
     return (
       <div className="item" onClick={this.addToTeam}>
           <div className="ui content">
-            <strong className="header">{this.props.player.first_name} {this.props.player.last_name}</strong>
+            <strong className="header">{this.props.player.name}</strong>
             <div className="description">
               Team: {this.props.player.team} |
               Position: {this.props.player.position} |
