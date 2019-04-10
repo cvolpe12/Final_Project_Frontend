@@ -18,17 +18,22 @@ class SignUpForm extends React.Component {
 	}
 
 	createUser = () => {
-		fetch("http://localhost:3001/api/v1/users", {
+		fetch("http://localhost:3000/api/v1/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				"Accepts": "application/json",
 			},
-			body: JSON.stringify(this.state)
+			body: JSON.stringify({
+        username: this.state.username,
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+      })
 		})
 		.then(res => res.json())
 		.then((response) => {
-
+      console.log(response);
 			if (response.errors){
 				alert(response.errors)
 			} else {

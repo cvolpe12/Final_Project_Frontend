@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Form, Button } from 'semantic-ui-react'
 import { connect } from "react-redux"
 
@@ -59,7 +60,11 @@ class Login extends React.Component {
           </Form.Field>
           <Button type='submit'>Submit</Button>
         </Form>
-
+        <br/>
+        <br/>
+        <Link to={`/signup`}>
+          <Button type='submit'>Sign Up</Button>
+        </Link>
         </div>
       </div>
     )

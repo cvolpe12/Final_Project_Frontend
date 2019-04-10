@@ -7,6 +7,7 @@ import UserContainer from "./containers/UserContainer"
 import CreateLeagueForm from "./components/CreateLeagueForm"
 import Login from "./components/Login"
 import NavBar from "./components/NavBar"
+import SignUpForm from "./components/SignUpForm"
 import { connect } from "react-redux"
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
             <Route path="/users/:id" render={routerProps => <UserContainer {...routerProps}/>} />
             <Route path="/leagues/create" exact component={routerProps => <CreateLeagueForm {...routerProps}/>} />
             <Route path="/leagues/:id" component={routerProps => <LeagueContainer {...routerProps}/>} />
+            <Route path="/signup" component={routerProps => <SignUpForm {...routerProps}/>} />
           </Switch>
         </Grid.Row>
       </Grid>
