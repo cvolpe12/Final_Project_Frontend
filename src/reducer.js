@@ -2,6 +2,7 @@
 const initialState = {
   allPlayers: [],
   currentlyDisplayed: [],
+  currentTeam: "",
   team: {
     catcher: "",
     first: "",
@@ -21,8 +22,6 @@ function reducer(state = initialState, action){
   switch (action.type) {
     case "GET_PLAYERS":
       return {...state, allPlayers: action.payload}
-    // case "ADD_PLAYER_TO_TEAM":
-    //   return {...state, team: [...state.team, action.payload]}
     case "SEARCH_PLAYERS":
       return {...state, currentlyDisplayed: action.payload}
     case "FILTER_POSITIONS":
@@ -31,6 +30,8 @@ function reducer(state = initialState, action){
       return {...state, league: action.payload}
     case "SET_CURRENT_USER":
       return {...state, currentUser: action.payload}
+    case "SET_CURRENT_TEAM":
+      return {...state, currentTeam: action.payload}
     case "SELECT_CATCHER":
       return {...state, team: {...state.team, catcher: action.payload}}
     case "SELECT_FIRST":

@@ -43,7 +43,7 @@ class CreateLeagueForm extends React.Component {
 		.then(res => res.json())
     .then(league => {
       console.log(league);
-      debugger
+      // debugger
       this.props.history.push(`/leagues/${league.id}`)
     })
   }

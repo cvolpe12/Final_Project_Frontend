@@ -9,7 +9,7 @@ class Team extends React.Component {
       // console.log(this.props.team);
       return (
         <div className="ui content">
-          <strong className="header">{player.first_name} {player.last_name}</strong>
+          <strong className="header">{player.name}</strong>
           <div className="description">
             Team: {player.team} |
             Position: {player.position} |
