@@ -1,7 +1,7 @@
 import React from "react";
 import UserInfo from "../components/UserInfo"
 import UserLeagues from "../components/UserLeagues"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class UserContainer extends React.Component {
 
@@ -10,11 +10,6 @@ class UserContainer extends React.Component {
       <div>
         <h1>User Page</h1>
         <UserInfo />
-        <Link to={`/leagues/create`}>
-          <button class="big ui button">
-            Create League
-          </button>
-        </Link>
         <br/>
         <UserLeagues />
         <p>history of games</p>
