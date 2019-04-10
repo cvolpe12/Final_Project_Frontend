@@ -67,7 +67,7 @@ class Team extends React.Component {
             {this.renderPlayerInfo(this.props.team.out3)}
         </div>
         <div className="item" >
-          <b className="icon">XH</b>
+          <b className="icon">XH:</b>
             {this.renderPlayerInfo(this.props.team.extra)}
         </div>
       </div>

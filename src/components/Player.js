@@ -54,7 +54,7 @@ class Player extends React.Component {
       case "C":
         if (team.catcher) {
           if (team.extra) {
-            alert("You chose a player")
+            alert("Position is filled.")
           } else {
             this.props.addExtra(player)
           }
@@ -65,7 +65,7 @@ class Player extends React.Component {
       case "1B":
         if (team.first) {
           if (team.extra) {
-            alert("You chose a player")
+            alert("Position is filled.")
           } else {
             this.props.addExtra(player)
           }
@@ -76,7 +76,7 @@ class Player extends React.Component {
       case "2B":
         if (team.second) {
           if (team.extra) {
-            alert("You chose a player")
+            alert("Position is filled.")
           } else {
             this.props.addExtra(player)
           }
@@ -87,7 +87,7 @@ class Player extends React.Component {
       case "3B":
         if (team.third) {
           if (team.extra) {
-            alert("You chose a player")
+            alert("Position is filled.")
           } else {
             this.props.addExtra(player)
           }
@@ -98,7 +98,7 @@ class Player extends React.Component {
       case "SS":
         if (team.short) {
           if (team.extra) {
-            alert("You chose a player")
+            alert("Position is filled.")
           } else {
             this.props.addExtra(player)
           }
@@ -111,7 +111,7 @@ class Player extends React.Component {
           if (team.out2) {
             if (team.out3) {
               if (team.extra) {
-                alert("You chose a player.")
+                alert("Position is filled.")
               } else {
                 this.props.addExtra(player)
               }
@@ -127,7 +127,7 @@ class Player extends React.Component {
         break;
         case "DH":
           if (team.extra) {
-            alert("You chose a player")
+            alert("Position is filled.")
           } else {
             this.props.addExtra(player)
           }
