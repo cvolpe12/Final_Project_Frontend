@@ -50,6 +50,24 @@ function reducer(state = initialState, action){
       return {...state, team: {...state.team, out3: action.payload}}
     case "SELECT_EXTRA":
       return {...state, team: {...state.team, extra: action.payload}}
+    case "REMOVE_CATCHER":
+      return {...state, team: {...state.team, catcher: ""}}
+    case "REMOVE_FIRST":
+      return {...state, team: {...state.team, first: ""}}
+    case "REMOVE_SECOND":
+      return {...state, team: {...state.team, second: ""}}
+    case "REMOVE_THIRD":
+      return {...state, team: {...state.team, third: ""}}
+    case "REMOVE_SHORT":
+      return {...state, team: {...state.team, short: ""}}
+    case "REMOVE_OUTFIELD1":
+      return {...state, team: {...state.team, out1: ""}}
+    case "REMOVE_OUTFIELD2":
+      return {...state, team: {...state.team, out2: ""}}
+    case "REMOVE_OUTFIELD3":
+      return {...state, team: {...state.team, out3: ""}}
+    case "REMOVE_EXTRA":
+      return {...state, team: {...state.team, extra: ""}}
 
     case "LOGOUT":
       return {...state, currentUser: ""}

@@ -7,7 +7,7 @@ class Player extends React.Component {
 // if player is not on team then fetch
 // else alert player on team
   playerOnTeam = () => {
-    console.log(this.props.player);
+    // console.log(this.props.player);
     if (Object.values(this.props.team).indexOf(this.props.player) > -1){
       return true
     }
@@ -41,7 +41,12 @@ class Player extends React.Component {
         })
       })
       .then(res => res.json())
-      this.addPlayerToTeam(this.props.player)
+      .then(draft => {
+        this.props.player["draftId"] = draft.id
+        console.log(this.props.player);
+        this.addPlayerToTeam(this.props.player)
+
+      })
     } else {
       alert("Player is on your team.")
     }

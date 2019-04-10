@@ -7,8 +7,6 @@ import { connect } from "react-redux"
 class LeagueContainer extends React.Component {
 
   enterLeague = () => {
-    console.log("entered");
-    console.log(this.props);
     let leagueId = this.props.match.params.id
     fetch('http://localhost:3000/api/v1/teams', {
       method: "POST",
@@ -29,8 +27,6 @@ class LeagueContainer extends React.Component {
 
   renderContainers = () => {
     if (this.props.currentUser) {
-      // debugger
-      console.log(this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id)));
       if (!this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id))) {
         return (
           <button onClick={this.enterLeague}>Enter League</button>
