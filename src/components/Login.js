@@ -47,7 +47,7 @@ class Login extends React.Component {
     return (
       <div>
         <h1>FanBall</h1>
-
+        <h4>Login</h4>
         <div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Field>
