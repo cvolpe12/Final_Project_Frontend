@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     return (
       <Fragment>
         <div className="six wide column">
-          FanBall
+          <div className="ui huge header">FanBall</div>
         </div>
         <div className="three wide column">
           <Link to={`/users/${this.props.currentUser.id}`}>

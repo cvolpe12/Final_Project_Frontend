@@ -31,17 +31,15 @@ class App extends Component {
 		}
 	}
 
-  logout = () => {
-		// localStorage.removeItem("token")
-		this.props.logUserOut()
-    // () => { this.props.history.push("/login") })
-	}
-
   render() {
     return (
       <Grid>
         <Grid.Row centered>
-        <NavBar/>
+        {this.props.currentUser ? (
+          <NavBar/>
+        ) : (
+          null
+        )}
           <Switch>
             <Route path="/" exact render={routerProps =>  <Login {...routerProps}/>} />
             <Route path="/users/:id" render={routerProps => <UserContainer {...routerProps}/>} />
@@ -54,6 +52,12 @@ class App extends Component {
   }
 }
 
+function mapStateToProps(state){
+  return {
+    currentUser: state.currentUser
+  }
+}
+
 function mapDispatchToProps(dispatch){
   return {
     setCurrentUser: (user) => {dispatch({type: "SET_CURRENT_USER", payload: user })},
@@ -61,4 +65,4 @@ function mapDispatchToProps(dispatch){
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
