@@ -6,6 +6,10 @@ import { connect } from "react-redux"
 
 class LeagueContainer extends React.Component {
 
+  state = {
+    entered: false
+  }
+
   enterLeague = () => {
     let leagueId = this.props.match.params.id
     fetch('http://localhost:3000/api/v1/teams', {
@@ -22,16 +26,23 @@ class LeagueContainer extends React.Component {
     .then(res => res.json())
     .then(team => {
       this.props.setTeam(team)
+      this.setState({
+        entered: true
+      })
     })
   }
 
   renderContainers = () => {
     if (this.props.currentUser) {
-      if (!this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id))) {
+      console.log(this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id)));
+      // if the current users leagues include the webpage league then render container
+      if (!this.state.entered) {
+        // debugger
         return (
-          <button onClick={this.enterLeague}>Enter League</button>
+          <button className="huge ui button" onClick={this.enterLeague}>Enter League</button>
         )
       } else {
+        // debugger
         return (
           <Fragment>
             <PlayerContainer />
@@ -46,9 +57,12 @@ class LeagueContainer extends React.Component {
 
   render() {
     return (
-      <div className="league-container">
+      <div>
         <LeagueInformation {...this.props}/>
-        {this.renderContainers()}
+        <br/>
+        <div className="league-container">
+          {this.renderContainers()}
+        </div>
       </div>
     )
   }
