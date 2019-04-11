@@ -79,7 +79,7 @@ class SignUpForm extends React.Component {
     		      <label>Password Confirmation</label>
     		      <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
     		    </Form.Field>
-    		    <Button type='submit'>Submit</Button>
+    		    <Button type='submit'>Create Account</Button>
     		  </Form>
           <br/>
           <br/>
