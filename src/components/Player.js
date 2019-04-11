@@ -26,6 +26,7 @@ class Player extends React.Component {
   addToTeam = e => {
     if (this.playerOnTeam() === false) {
       e.preventDefault()
+      console.log(this.props.currentTeam);
       // console.log(this.props.player);
       // console.log(e.target.value)
       // this.props.addPlayerToTeam(this.props.player)
@@ -36,7 +37,7 @@ class Player extends React.Component {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          "team_id": this.props.currentUser.id,
+          "team_id": this.props.currentTeam.id,
           "player_id": this.props.player.id
         })
       })
@@ -170,6 +171,7 @@ class Player extends React.Component {
 function mapStateToProps(state){
   return {
     currentUser: state.currentUser,
+    currentTeam: state.currentTeam,
     team: state.team
   }
 }

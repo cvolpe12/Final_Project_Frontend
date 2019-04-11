@@ -34,6 +34,7 @@ class LeagueContainer extends React.Component {
     })
   }
 
+// this function will submit the team to the database with all the players
   teamIsEntered = () => {
     let teamId = this.props.currentTeam.id
     fetch(`http://localhost:3000/api/v1/teams/${teamId}`, {
@@ -48,6 +49,8 @@ class LeagueContainer extends React.Component {
     })
     .then(res => res.json())
     .then(team => {
+      // debugger
+      console.log(team);
       this.props.setTeam(team)
     })
   }
@@ -63,13 +66,18 @@ class LeagueContainer extends React.Component {
   }
 
   renderContainers = () => {
+    let leagueId = this.props.match.params.id
     if (this.props.currentUser) {
-      console.log("state", this.state.entered === false);
-      console.log(this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id)));
+      let team = this.props.currentUser.teams.find(team => team.league_id === parseInt(leagueId))
+      team = team || this.props.currentTeam
+      // debugger
+      this.props.setTeam(team)
+      // console.log("state", this.state.entered === false);
+      // console.log(this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id)));
       // if the current users leagues include the webpage league then render container
       if (this.state.entered === true || this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id))) {
         // debugger
-        if (!!this.props.currentTeam.entered === false) {
+        if (team.entered === false) {
           return (
             <Fragment>
               <PlayerContainer />
@@ -79,10 +87,11 @@ class LeagueContainer extends React.Component {
               </div>
             </Fragment>
           )
-        } else {
+        }
+        else {
           return (
           <Fragment>
-            <LeagueTeams />
+            <LeagueTeams {...this.props}/>
           </Fragment>
         )}
       } else {
@@ -91,13 +100,13 @@ class LeagueContainer extends React.Component {
         )
       }
     } else {
-      console.log("nothing is rendering");
+      // console.log("nothing is rendering");
       return null
     }
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
         <LeagueInformation {...this.props}/>
@@ -105,6 +114,7 @@ class LeagueContainer extends React.Component {
         <div className="league-container">
           {this.renderContainers()}
         </div>
+
       </div>
     )
   }

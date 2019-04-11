@@ -17,16 +17,17 @@ class LeagueInformation extends React.Component {
       .then(league => {
         // debugger
         this.props.setLeague(league)
-        this.formatDate()
+        // this.formatDate()
       })
   }
 
-  formatDate = () => {
-    let date = this.props.league.date_of_games.split("")
+  formatDate = (league) => {
+    let date = league.date_of_games.split("")
     let year = date[0]+date[1]+date[2]+date[3]
     let month = date[4] + date[5]
     let day = date[6] + date[7]
-    this.setState({date: month+'-'+day+'-'+year})
+    return month+'-'+day+'-'+year
+    // this.setState({date: month+'-'+day+'-'+year})
   }
 
   render() {
@@ -35,7 +36,7 @@ class LeagueInformation extends React.Component {
         <h2>{this.props.league.name}</h2>
         <p>Max Participants: {this.props.league.participants}</p>
         <p>Limit: 60000</p>
-        <p>Date of Games: {this.state.date}</p>
+        <p>Date of Games: {this.props.league ? this.formatDate(this.props.league) : null}</p>
       </div>
     )
   }
