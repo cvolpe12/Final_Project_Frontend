@@ -1,6 +1,7 @@
 import React from "react";
 import UserInfo from "../components/UserInfo"
 import UserLeagues from "../components/UserLeagues"
+import LeagueSuggestions from "./LeagueSuggestions"
 // import { Link } from "react-router-dom";
 
 class UserContainer extends React.Component {
@@ -13,7 +14,7 @@ class UserContainer extends React.Component {
         <br/>
         <UserLeagues />
         <p>history of games</p>
-        <p>suggested leagues </p>
+        <LeagueSuggestions />
       </div>
     )
   }

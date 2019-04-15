@@ -14,6 +14,9 @@ class App extends Component {
 
   componentDidMount() {
     // debugger
+    fetch('http://localhost:3000/api/v1/leagues')
+    .then(resp => resp.json())
+    .then(leagues => this.props.getAllLeagues(leagues))
 		const jwt = localStorage.getItem('jwt')
 		if (jwt){
 			fetch("http://localhost:3000/api/v1/auto_login", {
@@ -62,6 +65,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
+    getAllLeagues: (leagues) => {dispatch({type: "GET_LEAGUES", payload: leagues })},
     setCurrentUser: (user) => {dispatch({type: "SET_CURRENT_USER", payload: user })},
     logUserOut: () => {dispatch({type: "LOGOUT"})},
   }
