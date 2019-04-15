@@ -69,21 +69,20 @@ class LeagueTeams extends React.Component {
       return this.state.enteredTeams.map(team => {
         // debugger
           return (
-            <div className="ui card league-team">
-              <div className="content">
-                <div className="header">{team.user.username}</div>
-                <div className="meta">2 days ago</div>
-                <div className="description">
-                  {this.findCatcher(team)}
-                  {this.findFirst(team)}
-                  {this.findSecond(team)}
-                  {this.findThird(team)}
-                  {this.findShort(team)}
-                  {this.findOutfield(team)}
-                  {this.findExtra(team)}
+              <div className="ui card">
+                <div className="content">
+                  <div className="header">{team.user.username}</div>
+                  <div className="description">
+                    {this.findCatcher(team)}
+                    {this.findFirst(team)}
+                    {this.findSecond(team)}
+                    {this.findThird(team)}
+                    {this.findShort(team)}
+                    {this.findOutfield(team)}
+                    {this.findExtra(team)}
+                  </div>
                 </div>
               </div>
-            </div>
           )
         })
     } else {
@@ -96,7 +95,9 @@ class LeagueTeams extends React.Component {
     return (
       <div>
         league team should be rendered
-        {this.renderEnteredTeams()}
+        <div className="league-team">
+            {this.renderEnteredTeams()}
+        </div>
       </div>
     )
   }
