@@ -5,12 +5,12 @@ class UserInfo extends React.Component {
 
   // this will render information based on logging in
 
+  // <p>name:{this.props.currentUser.name}</p>
   render() {
     console.log(this.props.currentUser);
     return (
       <div>
-        <h4>username:{this.props.currentUser.username}</h4>
-        <p>name:{this.props.currentUser.name}</p>
+        <h4>Welcome {this.props.currentUser.username}!</h4>
       </div>
     )
   }

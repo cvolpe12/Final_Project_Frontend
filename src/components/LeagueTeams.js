@@ -55,7 +55,7 @@ class LeagueTeams extends React.Component {
 
   findExtra = (team) => {
     let player = team.players.find(player => player.extra_player === true)
-    debugger
+    // debugger
     return <p>XH: {player.name}</p>
   }
 
@@ -69,9 +69,9 @@ class LeagueTeams extends React.Component {
       return this.state.enteredTeams.map(team => {
         // debugger
           return (
-            <div className="ui card">
+            <div className="ui card league-team">
               <div className="content">
-                <div className="header">Cute Dog</div>
+                <div className="header">{team.user.username}</div>
                 <div className="meta">2 days ago</div>
                 <div className="description">
                   {this.findCatcher(team)}

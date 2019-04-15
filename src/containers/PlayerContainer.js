@@ -14,7 +14,7 @@ class PlayerContainer extends React.Component {
   }
 
   renderPlayers = () => {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.currentlyDisplayed.length > 0) {
       return this.props.currentlyDisplayed.map(player => {
         return <Player key={player.id} player={player}/>

@@ -46,3 +46,8 @@
   display: flex;
   flex-direction: row;
 }
+
+.league-team {
+  display: flex;
+  flex-direction: row;
+}

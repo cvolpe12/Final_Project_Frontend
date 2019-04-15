@@ -4,9 +4,9 @@ import { connect } from "react-redux"
 class Team extends React.Component {
 
   removeFromTeam = (player) => {
-    console.log(player);
+    // console.log(player);
     let draftId = player.draftId
-    console.log(draftId);
+    // console.log(draftId);
     fetch(`http://localhost:3000/api/v1/drafts/${draftId}`, {
       method: "DELETE"
     })
