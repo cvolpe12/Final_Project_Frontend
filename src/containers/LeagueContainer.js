@@ -12,26 +12,31 @@ class LeagueContainer extends React.Component {
   }
 
   enterLeague = () => {
-    let leagueId = this.props.match.params.id
-    fetch('http://localhost:3000/api/v1/teams', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({
-        "user_id": this.props.currentUser.id,
-        "league_id": leagueId,
-        "entered": false
+    debugger
+    if (this.props.league.teams.length >= this.props.league.participants) {
+      alert("This league is full.")
+    } else {
+      let leagueId = this.props.match.params.id
+      fetch('http://localhost:3000/api/v1/teams', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          "user_id": this.props.currentUser.id,
+          "league_id": leagueId,
+          "entered": false
+        })
       })
-    })
-    .then(res => res.json())
-    .then(team => {
-      this.props.setCurrentTeam(team)
-      this.setState({
-        entered: true
+      .then(res => res.json())
+      .then(team => {
+        this.props.setCurrentTeam(team)
+        this.setState({
+          entered: true
+        })
       })
-    })
+    }
   }
 
 // this function will submit the team to the database with all the players

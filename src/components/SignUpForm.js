@@ -39,6 +39,7 @@ class SignUpForm extends React.Component {
 				alert(response.errors)
 			} else {
         this.props.setCurrentUser(response.user)
+        localStorage.setItem('jwt', response.jwt)
 				this.props.history.push(`/users/${response.user.id}`)
 			}
 		})
