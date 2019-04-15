@@ -38,7 +38,8 @@ class Player extends React.Component {
         },
         body: JSON.stringify({
           "team_id": this.props.currentTeam.id,
-          "player_id": this.props.player.id
+          "player_id": this.props.player.id,
+          "extra_player": false
         })
       })
       .then(res => res.json())
@@ -53,6 +54,22 @@ class Player extends React.Component {
     }
   }
 
+  setPlayerToExtra = (player) => {
+    // debugger
+    console.log("extra player", player);
+    fetch(`http://localhost:3000/api/v1/drafts/${player.draftId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        "extra_player": true
+      })
+    })
+    .then(res => res.json())
+  }
+
   addPlayerToTeam = player => {
     let team = this.props.team
     // condition ? exprT : exprF
@@ -63,6 +80,7 @@ class Player extends React.Component {
             alert("Position is filled.")
           } else {
             this.props.addExtra(player)
+            this.setPlayerToExtra(player)
           }
         } else {
           this.props.addCatcher(player)
@@ -74,6 +92,7 @@ class Player extends React.Component {
             alert("Position is filled.")
           } else {
             this.props.addExtra(player)
+            this.setPlayerToExtra(player)
           }
         } else {
           this.props.addFirst(player)
@@ -85,6 +104,7 @@ class Player extends React.Component {
             alert("Position is filled.")
           } else {
             this.props.addExtra(player)
+            this.setPlayerToExtra(player)
           }
         } else {
           this.props.addSecond(player)
@@ -96,6 +116,7 @@ class Player extends React.Component {
             alert("Position is filled.")
           } else {
             this.props.addExtra(player)
+            this.setPlayerToExtra(player)
           }
         } else {
           this.props.addThird(player)
@@ -107,6 +128,7 @@ class Player extends React.Component {
             alert("Position is filled.")
           } else {
             this.props.addExtra(player)
+            this.setPlayerToExtra(player)
           }
         } else {
           this.props.addShort(player)
@@ -120,6 +142,7 @@ class Player extends React.Component {
                 alert("Position is filled.")
               } else {
                 this.props.addExtra(player)
+                this.setPlayerToExtra(player)
               }
             } else {
               this.props.addOF3(player)
@@ -136,6 +159,7 @@ class Player extends React.Component {
             alert("Position is filled.")
           } else {
             this.props.addExtra(player)
+            this.setPlayerToExtra(player)
           }
           break;
       default:

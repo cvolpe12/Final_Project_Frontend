@@ -68,7 +68,8 @@ function reducer(state = initialState, action){
       return {...state, team: {...state.team, out3: ""}}
     case "REMOVE_EXTRA":
       return {...state, team: {...state.team, extra: ""}}
-
+    case 'EMPTY_TEAM':
+      return {...state, team: {catcher: "", first: "", second: "", third: "", short: "", out1: "", out2: "", out3: "", extra: ""}}
     case "LOGOUT":
       return {...state, currentUser: ""}
     default:

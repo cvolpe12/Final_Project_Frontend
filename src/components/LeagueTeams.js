@@ -19,17 +19,77 @@ class LeagueTeams extends React.Component {
     .then(teams => {
       let allTeams = teams.filter(team => team.league_id === parseInt(leagueId))
       let enteredTeams = allTeams.filter(team => team.entered === true)
-      debugger
+      // debugger
       this.setState({
-        enteredTeams: enteredTeams
+        enteredTeams: [...enteredTeams]
       })
     })
   }
 
+  findCatcher = (team) => {
+    let player = team.players.find(player => player.position === "C" && player.extra_player === false)
+    return <p>C: {player.name}</p>
+  }
+  findFirst = (team) => {
+    let player = team.players.find(player => player.position === "1B" && player.extra_player === false)
+    return <p>1B: {player.name}</p>
+  }
+  findSecond = (team) => {
+    let player = team.players.find(player => player.position === "2B" && player.extra_player === false)
+    return <p>2B: {player.name}</p>
+  }
+  findThird = (team) => {
+    let player = team.players.find(player => player.position === "3B" && player.extra_player === false)
+    return <p>3B: {player.name}</p>
+  }
+  findShort = (team) => {
+    let player = team.players.find(player => player.position === "SS" && player.extra_player === false)
+    return <p>SS: {player.name}</p>
+  }
+  findOutfield = (team) => {
+    let outfielders = team.players.filter(player => player.position === "OF" && player.extra_player === false)
+    return outfielders.map(player => {
+      return <p>OF: {player.name}</p>
+    })
+  }
+
+  findExtra = (team) => {
+    let player = team.players.find(player => player.extra_player === true)
+    debugger
+    return <p>XH: {player.name}</p>
+  }
+
+
+
   renderEnteredTeams = () => {
     console.log(this.props.league);
-    console.log(this.state.enteredTeams);
     // fetch all team players based on team id
+    if (this.state.enteredTeams) {
+      console.log(this.state.enteredTeams);
+      return this.state.enteredTeams.map(team => {
+        // debugger
+          return (
+            <div className="ui card">
+              <div className="content">
+                <div className="header">Cute Dog</div>
+                <div className="meta">2 days ago</div>
+                <div className="description">
+                  {this.findCatcher(team)}
+                  {this.findFirst(team)}
+                  {this.findSecond(team)}
+                  {this.findThird(team)}
+                  {this.findShort(team)}
+                  {this.findOutfield(team)}
+                  {this.findExtra(team)}
+                </div>
+              </div>
+            </div>
+          )
+        })
+    } else {
+      console.log("enteredTeams is nothing");
+      return null
+    }
   }
 
   render() {

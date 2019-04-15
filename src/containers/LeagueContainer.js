@@ -27,7 +27,7 @@ class LeagueContainer extends React.Component {
     })
     .then(res => res.json())
     .then(team => {
-      this.props.setTeam(team)
+      this.props.setCurrentTeam(team)
       this.setState({
         entered: true
       })
@@ -51,7 +51,8 @@ class LeagueContainer extends React.Component {
     .then(team => {
       // debugger
       console.log(team);
-      this.props.setTeam(team)
+      this.props.setCurrentTeam(team)
+      this.props.resetTeam()
     })
   }
 
@@ -71,7 +72,7 @@ class LeagueContainer extends React.Component {
       let team = this.props.currentUser.teams.find(team => team.league_id === parseInt(leagueId))
       team = team || this.props.currentTeam
       // debugger
-      this.props.setTeam(team)
+      this.props.setCurrentTeam(team)
       // console.log("state", this.state.entered === false);
       // console.log(this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id)));
       // if the current users leagues include the webpage league then render container
@@ -131,7 +132,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    setTeam: (team) => {dispatch({type: "SET_CURRENT_TEAM", payload: team })}
+    setCurrentTeam: (team) => {dispatch({type: "SET_CURRENT_TEAM", payload: team })},
+    resetTeam: () => {dispatch({type: "EMPTY_TEAM"})}
   }
 }
 
