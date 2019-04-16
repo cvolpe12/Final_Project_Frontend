@@ -9,12 +9,19 @@ class UserContainer extends React.Component {
   render() {
     return (
       <div>
-        <h1>User Page</h1>
+
         <UserInfo />
         <br/>
-        <UserLeagues />
-        <p>history of games</p>
-        <LeagueSuggestions />
+        <div>
+          <h4>Leagues Entered:</h4>
+          <UserLeagues />
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div>
+          <LeagueSuggestions />
+        </div>
       </div>
     )
   }

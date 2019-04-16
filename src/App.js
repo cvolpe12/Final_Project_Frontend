@@ -14,9 +14,11 @@ class App extends Component {
 
   componentDidMount() {
     // debugger
-    fetch('http://localhost:3000/api/v1/leagues')
-    .then(resp => resp.json())
-    .then(leagues => this.props.getAllLeagues(leagues))
+    fetch("http://localhost:3000/api/v1/leagues")
+      .then(res => res.json())
+      .then((allLeagues) => {
+        this.props.setAllLeagues(allLeagues)
+      })
 		const jwt = localStorage.getItem('jwt')
 		if (jwt){
 			fetch("http://localhost:3000/api/v1/auto_login", {
@@ -38,12 +40,13 @@ class App extends Component {
   render() {
     return (
       <Grid>
-        <Grid.Row centered>
+      <br/>
         {this.props.currentUser ? (
           <NavBar/>
         ) : (
           null
         )}
+        <Grid.Row centered>
           <Switch>
             <Route path="/" exact render={routerProps =>  <Login {...routerProps}/>} />
             <Route path="/users/:id" render={routerProps => <UserContainer {...routerProps}/>} />
@@ -65,8 +68,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return {
-    getAllLeagues: (leagues) => {dispatch({type: "GET_LEAGUES", payload: leagues })},
     setCurrentUser: (user) => {dispatch({type: "SET_CURRENT_USER", payload: user })},
+    setAllLeagues: leagues => {dispatch({type: "GET_LEAGUES", payload: leagues })},
     logUserOut: () => {dispatch({type: "LOGOUT"})},
   }
 }

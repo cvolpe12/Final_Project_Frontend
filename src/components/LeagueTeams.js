@@ -27,144 +27,7 @@ class LeagueTeams extends React.Component {
     })
   }
 
-  // renderScore = player => {
-  //   let score = player.game_hits + (player.game_doubles * 2) + (player.game_triples * 3) + (player.game_home_runs * 4) + player.game_rbi + player.game_runs + player.game_walks
-  //   return score
-  // }
-  //
-  // findCatcher = (team) => {
-  //   let player = team.players.find(player => player.position === "C" && player.extra_player === false)
-  //   return (
-  //     <div>
-  //       <b>C: {player.name}</b>
-  //       <p>Points: {this.renderScore(player)}</p>
-  //       <p>Hits: {player.game_hits} |
-  //       Doubles: {player.game_doubles} |
-  //       Triples: {player.game_triples} |
-  //       HR: {player.game_home_runs} |
-  //       RBI: {player.game_rbi} |
-  //       Runs: {player.game_runs} |
-  //       Walks: {player.game_walks}</p>
-  //       <p></p>
-  //     </div>
-  //   )
-  // }
-  // findFirst = (team) => {
-  //   let player = team.players.find(player => player.position === "1B" && player.extra_player === false)
-  //   return (
-  //     <div>
-  //       <b>1B: {player.name}</b>
-  //       <p>Points: {this.renderScore(player)}</p>
-  //       <p class="meta">
-  //       Hits: {player.game_hits} |
-  //       Doubles: {player.game_doubles} |
-  //       Triples: {player.game_triples} |
-  //       HR: {player.game_home_runs} |
-  //       RBI: {player.game_rbi} |
-  //       Runs: {player.game_runs} |
-  //       Walks: {player.game_walks}
-  //       </p>
-  //     </div>
-  //   )
-  // }
-  // findSecond = (team) => {
-  //   let player = team.players.find(player => player.position === "2B" && player.extra_player === false)
-  //   return (
-  //     <div>
-  //       <p>2B: {player.name}</p>
-  //       <p>Points: {this.renderScore(player)}</p>
-  //       <p class="meta">
-  //       Hits: {player.game_hits} |
-  //       Doubles: {player.game_doubles} |
-  //       Triples: {player.game_triples} |
-  //       HR: {player.game_home_runs} |
-  //       RBI: {player.game_rbi} |
-  //       Runs: {player.game_runs} |
-  //       Walks: {player.game_walks}
-  //       </p>
-  //     </div>
-  //   )
-  // }
-  // findThird = (team) => {
-  //   let player = team.players.find(player => player.position === "3B" && player.extra_player === false)
-  //   return (
-  //     <div>
-  //       <p>3B: {player.name}</p>
-  //       <p>Points: {this.renderScore(player)}</p>
-  //       <p class="meta">
-  //       Hits: {player.game_hits} |
-  //       Doubles: {player.game_doubles} |
-  //       Triples: {player.game_triples} |
-  //       HR: {player.game_home_runs} |
-  //       RBI: {player.game_rbi} |
-  //       Runs: {player.game_runs} |
-  //       Walks: {player.game_walks}
-  //       </p>
-  //     </div>
-  //   )
-  // }
-  // findShort = (team) => {
-  //   let player = team.players.find(player => player.position === "SS" && player.extra_player === false)
-  //   return (
-  //     <div>
-  //       <p>SS: {player.name}</p>
-  //       <p>Points: {this.renderScore(player)}</p>
-  //       <p class="meta">
-  //       Hits: {player.game_hits} |
-  //       Doubles: {player.game_doubles} |
-  //       Triples: {player.game_triples} |
-  //       HR: {player.game_home_runs} |
-  //       RBI: {player.game_rbi} |
-  //       Runs: {player.game_runs} |
-  //       Walks: {player.game_walks}
-  //       </p>
-  //     </div>
-  //   )
-  // }
-  // findOutfield = (team) => {
-  //   let outfielders = team.players.filter(player => player.position === "OF" && player.extra_player === false)
-  //   return outfielders.map(player => {
-  //     return (
-  //       <div>
-  //         <p>OF: {player.name}</p>
-  //         <p>Points: {this.renderScore(player)}</p>
-  //         <p class="meta">
-  //         Hits: {player.game_hits} |
-  //         Doubles: {player.game_doubles} |
-  //         Triples: {player.game_triples} |
-  //         HR: {player.game_home_runs} |
-  //         RBI: {player.game_rbi} |
-  //         Runs: {player.game_runs} |
-  //         Walks: {player.game_walks}
-  //         </p>
-  //       </div>
-  //     )
-  //   })
-  // }
-  // findExtra = (team) => {
-  //   let player = team.players.find(player => player.extra_player === true)
-  //   // debugger
-  //   return (
-  //     <div>
-  //       <p>XH: {player.name}</p>
-  //       <p>Points: {this.renderScore(player)}</p>
-  //       <p class="meta">
-  //       Hits: {player.game_hits} |
-  //       Doubles: {player.game_doubles} |
-  //       Triples: {player.game_triples} |
-  //       HR: {player.game_home_runs} |
-  //       RBI: {player.game_rbi} |
-  //       Runs: {player.game_runs} |
-  //       Walks: {player.game_walks}
-  //       </p>
-  //     </div>
-  //   )
-  // }
-
-
-
   renderEnteredTeams = () => {
-    console.log(this.props.league);
     // fetch all team players based on team id
     if (this.state.enteredTeams) {
       // console.log(this.state.enteredTeams);
@@ -175,7 +38,7 @@ class LeagueTeams extends React.Component {
           )
         })
     } else {
-      console.log("enteredTeams is nothing");
+      // console.log("enteredTeams is nothing");
       return null
     }
   }
@@ -204,14 +67,3 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LeagueTeams)
-
-// <div class="ui card">
-//   <div class="content">
-//     <div class="header">Cute Dog</div>
-//     <div class="meta">2 days ago</div>
-//     <div class="description">
-//       <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-//       <p>Many people also have their own barometers for what makes a cute dog.</p>
-//     </div>
-//   </div>
-// </div>
