@@ -12,7 +12,7 @@ class LeagueContainer extends React.Component {
   }
 
   enterLeague = () => {
-    debugger
+    // debugger
     if (this.props.league.teams.length >= this.props.league.participants) {
       alert("This league is full.")
     } else {
@@ -42,7 +42,7 @@ class LeagueContainer extends React.Component {
 // this function will submit the team to the database with all the players
   teamIsEntered = () => {
     let teamId = this.props.currentTeam.id
-    fetch(`http://localhost:3000/api/v1/teams/${teamId}`, {
+    fetch(`http://localhost:3000/api/v1/teams/${teamId}/submitted`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -54,8 +54,6 @@ class LeagueContainer extends React.Component {
     })
     .then(res => res.json())
     .then(team => {
-      // debugger
-      console.log(team);
       this.props.setCurrentTeam(team)
       this.props.resetTeam()
     })

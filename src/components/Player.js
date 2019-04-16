@@ -8,7 +8,7 @@ class Player extends React.Component {
 // else alert player on team
   playerOnTeam = () => {
     // console.log(this.props.player);
-    console.log(this.props.currentTeam);
+    // console.log(this.props.currentTeam);
     // if the player is in the props.team then it is true
     if (this.positionFilled(this.props.player) && Object.values(this.props.team).indexOf(this.props.player) > -1){
 
@@ -21,7 +21,7 @@ class Player extends React.Component {
   positionFilled = () => {
     let team = this.props.team
     // debugger
-    console.log("running position fillled");
+    // console.log("running position fillled");
     // if the player is on the roster then i should not do anything
     // if the player is not on the roster then i should check the positions
     // if the player's position is empty i should add to position
@@ -123,7 +123,7 @@ class Player extends React.Component {
 
 // creates the Draft object
   addToTeam = e => {
-    console.log("running event handler");
+    // console.log("running event handler");
     // debugger
     e.preventDefault()
     if (this.positionFilled() === false) {
@@ -146,7 +146,7 @@ class Player extends React.Component {
       .then(res => res.json())
       .then(draft => {
         this.props.player["draftId"] = draft.id
-        console.log(this.props.player);
+        // console.log(this.props.player);
         this.addPlayerToTeam(this.props.player)
 
       })

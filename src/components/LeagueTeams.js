@@ -67,7 +67,7 @@ class LeagueTeams extends React.Component {
     if (this.state.enteredTeams) {
       console.log(this.state.enteredTeams);
       return this.state.enteredTeams.map(team => {
-        // debugger
+        debugger
           return (
               <div className="ui card">
                 <div className="content">
