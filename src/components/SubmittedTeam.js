@@ -11,7 +11,6 @@ class SubmittedTeam extends React.Component {
     this.props.team.players.map(player => {
       score += player.game_hits + (player.game_doubles * 2) + (player.game_triples * 3) + (player.game_home_runs * 4) + player.game_rbi + player.game_runs + player.game_walks
     })
-    debugger
     return score
   }
 
