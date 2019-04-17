@@ -81,7 +81,7 @@ class Team extends React.Component {
 
   render() {
     return (
-      <div className="ui list">
+      <div className="ui list inverted">
         <div className="item" >
           <b className="icon">C:</b>
             {this.renderPlayerInfo(this.props.team.catcher)}

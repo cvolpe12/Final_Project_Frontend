@@ -76,14 +76,12 @@ class LeagueContainer extends React.Component {
       team = team || this.props.currentTeam
       // debugger
       this.props.setCurrentTeam(team)
-      // console.log("state", this.state.entered === false);
-      // console.log(this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id)));
       // if the current users leagues include the webpage league then render container
       if (this.state.entered === true || this.props.currentUser.leagues.some(league => league.id === parseInt(this.props.match.params.id))) {
         // debugger
         if (team.entered === false) {
           return (
-            <div>
+            <div className="select-player">
               <PlayerContainer />
               <TeamContainer />
               <div>
@@ -94,13 +92,15 @@ class LeagueContainer extends React.Component {
         }
         else {
           return (
-          <div>
+          <Fragment>
             <LeagueTeams {...this.props}/>
-          </div>
+          </Fragment>
         )}
       } else {
         return (
-          <button className="huge ui button" onClick={this.enterLeague}>Enter League</button>
+          <div className="enter-league">
+            <button className="huge ui button" onClick={this.enterLeague}>Enter League</button>
+          </div>
         )
       }
     } else {
@@ -113,11 +113,13 @@ class LeagueContainer extends React.Component {
     // console.log(this.props);
     return (
       <div className="application">
+      <div>
         <LeagueInformation {...this.props}/>
         <br/>
         <div className="league-container">
           {this.renderContainers()}
         </div>
+      </div>
       </div>
     )
   }

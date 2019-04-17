@@ -11,27 +11,6 @@ class NavBar extends React.Component {
     localStorage.removeItem('jwt')
     // () => { this.props.history.push("/login") })
 	}
-  // <div class="ui menu">
-  //   <p class="item">FANBALL</p>
-  //
-  //   <div class="right menu">
-  //     <p class="item">
-  //       <Link to={`/users/${this.props.currentUser.id}`}>
-  //         Home
-  //       </Link>
-  //     </p>
-  //     <p class="item">
-  //       <Link to={`/leagues/create`}>
-  //         Create League
-  //       </Link>
-  //     </p>
-  //     <p class="item" onClick={this.logout}>
-  //       <Link to={`/`}>
-  //         Log Out
-  //       </Link>
-  //     </p>
-  //   </div>
-  // </div>
 
   render() {
     return (

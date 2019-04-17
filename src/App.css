@@ -34,27 +34,75 @@
   }
 }
 
-.player-list {
-  display: flex;
-  flex-direction: column;
-  border: 1px dashed black;
+.player-container {
+  
   padding: 10px;
   margin: 10px;
-  overflow-y: scroll;
-  max-height: 400px;
+  background-color: #1b1c1d;
+  opacity: 0.95;
+  color: white;
+}
+
+.team-container {
+  
+  padding: 10px;
+  margin: 10px;
+  background-color: #1b1c1d;
+  opacity: 0.95;
+  color: white;
 }
 
 .league-container {
   display: flex;
   flex-direction: row;
+  padding-left: 20px;
+  margin: 0 auto;
+}
+.player-list {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 10px;
+  margin: 10px;
+  overflow-y: scroll;
+  max-height: 500px;
 }
 
 .league-team {
   display: flex;
   flex-direction: row;
-  border: 1px dashed white;
-  padding: 50px;
+  margin: 0 auto;
+  
+  padding: 10px;
+}
+
+.select-player {
+  display: flex;
+  flex-direction: row;
+}
+
+.team-card {
   margin: 10px;
+}
+
+.league-info {
+  color: white
+}
+
+.enter-league {
+
+  padding: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.create-league {
+  
+  padding: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
 }
 
 .logo-navbar {
@@ -79,7 +127,7 @@
 .welcome {
   opacity: 0.95;
   background-color: #1b1c1d;
-  border: 1px dashed white;
+  
   padding: 50px;
   margin: 10px;
   text-align: center;
@@ -92,7 +140,7 @@
 }
 
 .user-container {
-  border: 1px dashed white;
+  
   padding: 50px;
   margin: 10px;
   text-align: center;

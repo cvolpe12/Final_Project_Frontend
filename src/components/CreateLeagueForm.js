@@ -55,8 +55,9 @@ class CreateLeagueForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="ui form" onSubmit={this.handleSubmit}>
+      <div className="application">
+      <div className="create-league">
+        <form className="ui inverted form" onSubmit={this.handleSubmit}>
           <div className="equal width fields">
             <div className="field">
               <label>League name</label>
@@ -81,7 +82,7 @@ class CreateLeagueForm extends React.Component {
             <button className="ui button">Submit</button>
           </div>
         </form>
-
+      </div>
       </div>
     )
   }

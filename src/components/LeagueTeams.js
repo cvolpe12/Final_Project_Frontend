@@ -34,7 +34,10 @@ class LeagueTeams extends React.Component {
       return this.state.enteredTeams.map(team => {
         // debugger
           return (
+            <div>
               <SubmittedTeam key={team.id} team={team}/>
+
+            </div>
           )
         })
     } else {
@@ -45,7 +48,7 @@ class LeagueTeams extends React.Component {
 
   render() {
     return (
-        <div className="league-team">
+        <div className="league-team" itemsPerRow={4}>
             {this.renderEnteredTeams()}
         </div>
     )

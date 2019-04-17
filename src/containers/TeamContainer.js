@@ -26,7 +26,7 @@ class TeamContainer extends React.Component {
   render() {
     // console.log(this.props)
     return (
-    <div className="">
+    <div className="team-container">
     user team
     <br/>
     <br/>

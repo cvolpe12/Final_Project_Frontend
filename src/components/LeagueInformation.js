@@ -32,7 +32,8 @@ class LeagueInformation extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="league-info">
+      <br/>
         <h2>{this.props.league.name}</h2>
         <p>Max Participants: {this.props.league.participants}</p>
         <p>Date of Games: {this.props.league ? this.formatDate(this.props.league) : null}</p>
