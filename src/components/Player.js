@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { Table } from "semantic-ui-react"
 
 class Player extends React.Component {
 
@@ -173,7 +174,7 @@ class Player extends React.Component {
   renderTeamLogo = () => {
     switch (this.props.player.team) {
       case "ARI":
-        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/578/full/rcehah9k0kekjkgzm077fflws.png"/>
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/50/full/gnnnrbxcmjhdgeu6mavqk3945.png"/>
       case "ATL":
         return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/51/full/7150_atlanta_braves-primary-2018.png"/>
       case "BAL":
@@ -338,31 +339,47 @@ class Player extends React.Component {
   render() {
     if (this.props.player) {
       return (
-        <div className="item" onClick={this.addToTeam}>
-            <div className="ui content">
-              <strong className="header">{this.props.player.name}</strong>
-              <div className="description">
-                Team: {this.props.player.team} |
-                Position: {this.props.player.position} |
-                Bats: {this.props.player.batting_stance} |
-                BAA: {this.props.player.season_batting_avg} |
-                SLG: {this.props.player.season_slugging_pct} |
-                1B: {this.props.player.season_hits} |
-                2B: {this.props.player.season_doubles} |
-                3B: {this.props.player.season_triples} |
-                HR: {this.props.player.season_home_runs} |
-                RBI: {this.props.player.season_rbi} |
-                Runs: {this.props.player.season_runs} |
-                Walks: {this.props.player.season_walks}
-          </div>
-        </div>
-      </div>
+        <Table.Row onClick={this.addToTeam} style={{cursor:"pointer"}}>
+          <Table.Cell>{this.props.player.name}</Table.Cell>
+          <Table.Cell>{this.renderTeamLogo()}</Table.Cell>
+          <Table.Cell>{this.props.player.position}</Table.Cell>
+          <Table.Cell>{this.props.player.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.player.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.player.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.player.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.player.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.player.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.player.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.player.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.player.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.player.season_walks}</Table.Cell>
+        </Table.Row>
       )
     } else {
       return null
     }
   }
 }
+
+// <div className="item" onClick={this.addToTeam}>
+//     <div className="ui content">
+//       <strong className="header">{this.props.player.name}</strong>
+//       <div className="description">
+//         Team: {this.props.player.team} |
+//         Position: {this.props.player.position} |
+//         Bats: {this.props.player.batting_stance} |
+//         BAA: {this.props.player.season_batting_avg} |
+//         SLG: {this.props.player.season_slugging_pct} |
+//         1B: {this.props.player.season_hits} |
+//         2B: {this.props.player.season_doubles} |
+//         3B: {this.props.player.season_triples} |
+//         HR: {this.props.player.season_home_runs} |
+//         RBI: {this.props.player.season_rbi} |
+//         Runs: {this.props.player.season_runs} |
+//         Walks: {this.props.player.season_walks}
+//   </div>
+// </div>
+// </div>
 
 function mapStateToProps(state){
   return {

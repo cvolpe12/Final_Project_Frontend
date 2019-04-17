@@ -151,6 +151,9 @@
   border: 1px dashed black;
 }
 
+.player-row:hover {
+  background-color: black
+}
 
 .application {
   height: 110vh;

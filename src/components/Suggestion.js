@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import { Link } from "react-router-dom";
-import { Card, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
 
 const Suggestion = (props) => {
