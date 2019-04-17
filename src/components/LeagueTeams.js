@@ -45,12 +45,9 @@ class LeagueTeams extends React.Component {
 
   render() {
     return (
-      <div>
-        league team should be rendered
         <div className="league-team">
             {this.renderEnteredTeams()}
         </div>
-      </div>
     )
   }
 }

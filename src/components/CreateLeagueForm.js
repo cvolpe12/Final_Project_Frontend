@@ -6,7 +6,7 @@ class CreateLeagueForm extends React.Component {
     name: "",
     dateOfGames: "",
     participants: "",
-    playerLeague: "MLB"
+    // playerLeague: "MLB"
   }
 
   handleChange = (e) => {
@@ -77,27 +77,6 @@ class CreateLeagueForm extends React.Component {
               </div>
             </div>
           </div>
-          <div className="inline fields" >
-            <label>Player League</label>
-            <div className="field">
-              <div className="ui radio checkbox">
-                <input type="radio" name="leagueSource" checked={this.state.playerLeague === "MLB"} value="MLB" tabIndex="0" onChange={this.handleOptionChange}/>
-                <label>MLB</label>
-              </div>
-            </div>
-            <div className="field">
-              <div className="ui radio checkbox">
-                <input type="radio" name="leagueSource" checked={this.state.playerLeague === "NL"} value="NL" tabIndex="0" onChange={this.handleOptionChange}/>
-                <label>NL</label>
-              </div>
-            </div>
-            <div className="field">
-              <div className="ui radio checkbox">
-                <input type="radio" name="leagueSource" checked={this.state.playerLeague === "AL"} value="AL" tabIndex="0" onChange={this.handleOptionChange}/>
-                <label>AL</label>
-              </div>
-            </div>
-          </div>
           <div className="field">
             <button className="ui button">Submit</button>
           </div>
@@ -108,3 +87,24 @@ class CreateLeagueForm extends React.Component {
   }
 }
 export default CreateLeagueForm
+// <div className="inline fields" >
+//   <label>Player League</label>
+//   <div className="field">
+//     <div className="ui radio checkbox">
+//       <input type="radio" name="leagueSource" checked={this.state.playerLeague === "MLB"} value="MLB" tabIndex="0" onChange={this.handleOptionChange}/>
+//       <label>MLB</label>
+//     </div>
+//   </div>
+//   <div className="field">
+//     <div className="ui radio checkbox">
+//       <input type="radio" name="leagueSource" checked={this.state.playerLeague === "NL"} value="NL" tabIndex="0" onChange={this.handleOptionChange}/>
+//       <label>NL</label>
+//     </div>
+//   </div>
+//   <div className="field">
+//     <div className="ui radio checkbox">
+//       <input type="radio" name="leagueSource" checked={this.state.playerLeague === "AL"} value="AL" tabIndex="0" onChange={this.handleOptionChange}/>
+//       <label>AL</label>
+//     </div>
+//   </div>
+// </div>

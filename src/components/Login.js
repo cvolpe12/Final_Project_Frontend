@@ -28,7 +28,7 @@ class Login extends React.Component {
 		})
 		.then(res => res.json())
     .then((response) => {
-      console.log(response);
+      // console.log(response);
 			if (response.errors) {
 				alert(response.errors)
 			} else {
@@ -45,11 +45,13 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>FanBall</h1>
-        <h4>Login</h4>
+      <div className="application">
+      <br/><br/><br/><br/><br/>
+      <div className="welcome">
+        <h1 className="logo-login">FanDraft</h1>
+        <h3 className="welcome-font">Login</h3>
         <div>
-        <Form onSubmit={this.handleSubmit}>
+        <Form inverted onSubmit={this.handleSubmit}>
           <Form.Field>
             <label>Username</label>
             <input name="username" value={this.state.username} placeholder='Username' onChange={this.handleChange}/>
@@ -66,6 +68,7 @@ class Login extends React.Component {
           <Button type='submit'>Sign Up</Button>
         </Link>
         </div>
+      </div>
       </div>
     )
   }

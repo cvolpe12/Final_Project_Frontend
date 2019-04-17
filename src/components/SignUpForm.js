@@ -55,29 +55,31 @@ class SignUpForm extends React.Component {
 
 	render(){
 		return (
-      <div>
-        <h1>FanBall</h1>
-        <h3>Create Account</h3>
+      <div className="application">
+      <br/><br/><br/><br/><br/>
+      <div className="welcome">
+        <h1 className="logo-login">FanBall</h1>
+        <h3 className="welcome-font">Create Account</h3>
         <div>
-    			<Form onSubmit={this.handleSubmit}>
+    			<Form inverted onSubmit={this.handleSubmit}>
     		    <Form.Field>
-    		      <label>Username</label>
+    		      <label className="label-color">Username</label>
     		      <input onChange={this.handleChange} name="username" value={this.state.username} placeholder='Username' />
     		    </Form.Field>
     		    <Form.Field>
-    		      <label>Name</label>
+    		      <label className="label-color">Name</label>
     		      <input onChange={this.handleChange} name="name" value={this.state.name} placeholder='Name' />
     		    </Form.Field>
     		    <Form.Field>
-    		      <label>Email</label>
+    		      <label className="label-color">Email</label>
     		      <input onChange={this.handleChange} name="email" value={this.state.email} placeholder='Email' />
     		    </Form.Field>
     		    <Form.Field>
-    		      <label>Password</label>
+    		      <label className="label-color">Password</label>
     		      <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder='Password' />
     		    </Form.Field>
     		    <Form.Field>
-    		      <label>Password Confirmation</label>
+    		      <label className="label-color">Password Confirmation</label>
     		      <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
     		    </Form.Field>
     		    <Button type='submit'>Create Account</Button>
@@ -88,6 +90,7 @@ class SignUpForm extends React.Component {
             <Button type='submit'>Login</Button>
           </Link>
         </div>
+      </div>
       </div>
 		)
 	}

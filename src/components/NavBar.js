@@ -36,27 +36,27 @@ class NavBar extends React.Component {
   render() {
     return (
       <Fragment>
-      <div className="ui four item menu">
-        <p className="item">FANBALL</p>
+        <div className="ui four item inverted menu">
+          <p className="item logo-navbar">FanDraft</p>
 
-        <div className="right three item menu">
-          <p className="item">
-            <Link to={`/users/${this.props.currentUser.id}`}>
-              Profile
-            </Link>
-          </p>
-          <p className="item">
-            <Link to={`/leagues/create`}>
-              Create League
-            </Link>
-          </p>
-          <p className="item" onClick={this.logout}>
-            <Link to={`/`}>
-              Log Out
-            </Link>
-          </p>
+          <div className="right three item menu">
+            <p className="item">
+              <Link to={`/users/${this.props.currentUser.id}`}>
+                Profile
+              </Link>
+            </p>
+            <p className="item">
+              <Link to={`/leagues/create`}>
+                Create League
+              </Link>
+            </p>
+            <p className="item" onClick={this.logout}>
+              <Link to={`/`}>
+                Log Out
+              </Link>
+            </p>
+          </div>
         </div>
-      </div>
       </Fragment>
     )
   }

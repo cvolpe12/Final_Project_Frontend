@@ -83,20 +83,20 @@ class LeagueContainer extends React.Component {
         // debugger
         if (team.entered === false) {
           return (
-            <Fragment>
+            <div>
               <PlayerContainer />
               <TeamContainer />
               <div>
                 <button className="small ui button" onClick={this.enterTeam}>Submit Team</button>
               </div>
-            </Fragment>
+            </div>
           )
         }
         else {
           return (
-          <Fragment>
+          <div>
             <LeagueTeams {...this.props}/>
-          </Fragment>
+          </div>
         )}
       } else {
         return (
@@ -112,13 +112,12 @@ class LeagueContainer extends React.Component {
   render() {
     // console.log(this.props);
     return (
-      <div>
+      <div className="application">
         <LeagueInformation {...this.props}/>
         <br/>
         <div className="league-container">
           {this.renderContainers()}
         </div>
-
       </div>
     )
   }

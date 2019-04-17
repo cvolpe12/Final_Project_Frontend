@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
 .App {
   text-align: center;
 }
@@ -50,4 +52,58 @@
 .league-team {
   display: flex;
   flex-direction: row;
+  border: 1px dashed white;
+  padding: 50px;
+  margin: 10px;
+}
+
+.logo-navbar {
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+.logo-login {
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+}
+
+.navbar {
+  background-color: #d63031;
+}
+
+.welcome-font {
+  color: white
+}
+
+.welcome {
+  opacity: 0.95;
+  background-color: #1b1c1d;
+  border: 1px dashed white;
+  padding: 50px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.menu {
+  height: 9vh;
+  margin-bottom: 0px
+}
+
+.user-container {
+  border: 1px dashed white;
+  padding: 50px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.application {
+  height: 110vh;
+  width: 200vh;
+  margin-top: -30px;
+  background-image: url("https://cdn.wallpapersafari.com/45/30/7wkubU.jpg");
+  background-size: cover;
+
 }

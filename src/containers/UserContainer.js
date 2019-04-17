@@ -8,8 +8,8 @@ class UserContainer extends React.Component {
 
   render() {
     return (
-      <div>
-
+      <div className="application">
+      <div className="user-container">
         <UserInfo />
         <br/>
         <div>
@@ -21,6 +21,7 @@ class UserContainer extends React.Component {
         <br/>
         <div>
           <LeagueSuggestions />
+        </div>
         </div>
       </div>
     )

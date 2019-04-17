@@ -10,7 +10,7 @@ class UserInfo extends React.Component {
     console.log(this.props.currentUser);
     return (
       <div>
-        <h4>Welcome {this.props.currentUser.username}!</h4>
+        <h2 className="welcome-user">Welcome {this.props.currentUser.username}!</h2>
       </div>
     )
   }
