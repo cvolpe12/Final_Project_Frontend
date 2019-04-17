@@ -61,7 +61,7 @@
 .player-list {
   display: flex;
   flex-direction: column;
-
+  border: 1px solid white;
   padding: 10px;
   margin: 10px;
   overflow-y: scroll;
@@ -140,16 +140,17 @@
 }
 
 .user-container {
-
+  color: white;
   padding: 50px;
   margin: 10px;
   text-align: center;
   display: inline-block;
 }
 
-p.item.logout {
-  margin: 0px 0px 14px
+.allplayers {
+  border: 1px dashed black;
 }
+
 
 .application {
   height: 110vh;

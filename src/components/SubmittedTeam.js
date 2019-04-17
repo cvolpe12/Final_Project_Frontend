@@ -146,7 +146,7 @@ class SubmittedTeam extends React.Component {
   render() {
     const {team} = this.props
     return (
-      <div className="ui card team-card">
+      <div className="ui card team-card" style={{opacity: 0.9}}>
         <div className="content">
           <div className="header">{team.user.username}</div>
           <div className="header">Score: {this.renderTeamScore()}</div>

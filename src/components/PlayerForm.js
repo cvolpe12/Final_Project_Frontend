@@ -33,7 +33,7 @@ class PlayerForm extends React.Component {
           <input type="text" placeholder="Search..." name="search" onChange={this.searchPlayers}/>
         </form>
         <label>
-          Position:
+          Position: 
           <select onChange={this.filterPlayerPosition}>
             <option value="All">All</option>
             <option value="C">C</option>

@@ -38,7 +38,7 @@ class LeagueSuggestions extends React.Component {
   render() {
     return (
       <div className="suggestion-container">
-        <h4>Suggestions</h4>
+        <h3>Suggestions</h3>
         <Card.Group>
           {this.renderSuggestions()}
         </Card.Group>

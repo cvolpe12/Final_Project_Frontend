@@ -13,7 +13,7 @@ class UserContainer extends React.Component {
         <UserInfo />
         <br/>
         <div>
-          <h4>Leagues Entered:</h4>
+          <h3>Leagues Entered:</h3>
           <UserLeagues />
         </div>
         <br/>

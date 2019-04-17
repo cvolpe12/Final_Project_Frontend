@@ -31,7 +31,7 @@ class PlayerContainer extends React.Component {
   render() {
     return (
     <div className="player-container">
-      Player Container
+      <b>Click a Player to add to your team. All stats shown are their season stats.</b>
       <PlayerForm />
       <div className="player-list">
         {this.renderPlayers()}

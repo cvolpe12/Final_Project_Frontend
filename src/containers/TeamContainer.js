@@ -27,7 +27,7 @@ class TeamContainer extends React.Component {
     // console.log(this.props)
     return (
     <div className="team-container">
-    user team
+    Your Team
     <br/>
     <br/>
       <div className="player-list">
