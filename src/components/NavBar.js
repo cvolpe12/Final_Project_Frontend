@@ -20,9 +20,9 @@ class NavBar extends React.Component {
 
           <div className="right three item menu">
             <p className="item">
-              <Link to={`/users/${this.props.currentUser.id}`}>
+              <a href={`/users/${this.props.currentUser.id}`}>
                 Profile
-              </Link>
+              </a>
             </p>
             <p className="item">
               <Link to={`/leagues/create`}>
