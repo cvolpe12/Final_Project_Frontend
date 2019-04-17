@@ -35,7 +35,7 @@
 }
 
 .player-container {
-  
+
   padding: 10px;
   margin: 10px;
   background-color: #1b1c1d;
@@ -44,7 +44,7 @@
 }
 
 .team-container {
-  
+
   padding: 10px;
   margin: 10px;
   background-color: #1b1c1d;
@@ -61,7 +61,7 @@
 .player-list {
   display: flex;
   flex-direction: column;
-  
+
   padding: 10px;
   margin: 10px;
   overflow-y: scroll;
@@ -72,7 +72,7 @@
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  
+
   padding: 10px;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .create-league {
-  
+
   padding: 100px;
   margin: 0 auto;
   text-align: center;
@@ -127,7 +127,7 @@
 .welcome {
   opacity: 0.95;
   background-color: #1b1c1d;
-  
+
   padding: 50px;
   margin: 10px;
   text-align: center;
@@ -140,11 +140,15 @@
 }
 
 .user-container {
-  
+
   padding: 50px;
   margin: 10px;
   text-align: center;
   display: inline-block;
+}
+
+p.item.logout {
+  margin: 0px 0px 14px
 }
 
 .application {

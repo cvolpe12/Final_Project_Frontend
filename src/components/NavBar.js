@@ -29,11 +29,12 @@ class NavBar extends React.Component {
                 Create League
               </Link>
             </p>
-            <p className="item" onClick={this.logout}>
+            <p className="item" style={{ marginHeight: 14}} onClick={this.logout}>
               <Link to={`/`}>
                 Log Out
               </Link>
             </p>
+            <p className="item"></p>
           </div>
         </div>
       </Fragment>
