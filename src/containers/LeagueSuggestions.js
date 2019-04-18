@@ -27,8 +27,8 @@ class LeagueSuggestions extends React.Component {
         return league
       }
     })
-    console.log(this.props.allLeagues);
-    console.log(filteredLeagues);
+    // console.log(this.props.allLeagues);
+    // console.log(filteredLeagues);
     return filteredLeagues.slice(0,4).map(league => {
         return <Suggestion key={league.id} league={league}/>
       }

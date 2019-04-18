@@ -7,7 +7,7 @@ class UserInfo extends React.Component {
 
   // <p>name:{this.props.currentUser.name}</p>
   render() {
-    console.log(this.props.currentUser);
+    // console.log(this.props.currentUser);
     return (
       <div>
         <h2 className="welcome-user">Welcome {this.props.currentUser.username}!</h2>

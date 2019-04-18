@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import Team from "../components/Team"
-import { Segment, Table } from "semantic-ui-react"
+import { Table } from "semantic-ui-react"
 
 
 class TeamContainer extends React.Component {
@@ -30,7 +30,7 @@ class TeamContainer extends React.Component {
     // console.log(this.props)
     return (
     <div className="team-container">
-    Your Team
+    <h3>Your Team</h3>
     <br/>
     <br/>
       <Table compact celled>

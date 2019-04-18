@@ -6,7 +6,7 @@ import { Card } from 'semantic-ui-react'
 class UserLeagues extends React.Component {
 
     renderTeams = () => {
-      console.log(this.props.currentUser);
+      // console.log(this.props.currentUser);
       // debugger
       if (!!this.props.currentUser) {
         return this.props.currentUser.leagues.map(league => {
