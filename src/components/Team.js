@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux"
+import { Segment, Table } from "semantic-ui-react"
+
 
 class Team extends React.Component {
 
@@ -15,6 +17,73 @@ class Team extends React.Component {
       let position = Object.keys(this.props.team)[index]
       this.removeFromStoreTeam(position)
     })
+  }
+
+  renderTeamLogo = player => {
+    switch (player.team) {
+      case "ARI":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/50/full/gnnnrbxcmjhdgeu6mavqk3945.png"/>
+      case "ATL":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/51/full/7150_atlanta_braves-primary-2018.png"/>
+      case "BAL":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/52/full/5800_baltimore_orioles-primary-2019.png"/>
+      case "BOS":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/53/full/c0whfsa9j0vbs079opk2s05lx.png"/>
+      case "CHC":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/54/full/q9gvs07u72gc9xr3395u6jh68.png"/>
+      case "CWS":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/55/full/oxvkprv7v4inf5dgqdebp0yse.png"/>
+      case "CIN":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/56/full/z9e0rqit393ojiizsemd0t1hx.png"/>
+      case "CLE":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/57/full/5347_cleveland_indians-primary-2014.png"/>
+      case "COL":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/58/full/6871_colorado_rockies-primary-2017.png"/>
+      case "DET":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/59/full/8964_detroit_tigers-primary-2016.png"/>
+      case "HOU":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/4929/full/9503_houston_astros-primary-2000.png"/>
+      case "KC":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/62/full/8322_kansas_city_royals-primary-2019.png"/>
+      case "LAA":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/6521/full/4389_los_angeles_angels-primary-2016.png"/>
+      case "LAD":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/63/full/efvfv5b5g1zgpsf56gb04lthx.png"/>
+      case "MIA":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/3637/full/7544_miami_marlins-primary-2019.png"/>
+      case "MIL":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/64/full/7997_milwaukee_brewers-primary-2018.png"/>
+      case "MIN":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/65/full/peii986yf4l42v3aa3hy0ovlf.png"/>
+      case "NYM":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/67/full/m01gfgeorgvbfw15fy04alujm.png"/>
+      case "NYY":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/68/full/1256.png"/>
+      case "OAK":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/69/full/6xk2lpc36146pbg2kydf13e50.png"/>
+      case "PHI":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/70/full/7579_philadelphia_phillies-primary-2019.png"/>
+      case "PIT":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/71/full/1250_pittsburgh_pirates-primary-2014.png"/>
+      case "SD":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/73/full/4344_san_diego_padres-primary-2015.png"/>
+      case "SF":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/74/full/cpqj6up5bvgpoedg5fwsk20ve.png"/>
+      case "SEA":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/75/full/1305.png"/>
+      case "STL":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/72/full/3zhma0aeq17tktge1huh7yok5.png"/>
+      case "TB":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/2535/full/9448_tampa_bay_rays-primary-2019.png"/>
+      case "TEX":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/77/full/ajfeh4oqeealq37er15r3673h.png"/>
+      case "TOR":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/53/78/full/2559d7603ouedg7ldhw0br4fn.png"/>
+      case "WAS":
+        return <img className="ui mini image" src="http://content.sportslogos.net/logos/54/578/full/rcehah9k0kekjkgzm077fflws.png"/>
+      default:
+        return this.props.team
+    }
   }
 
   removeFromStoreTeam = (position) => {
@@ -53,26 +122,23 @@ class Team extends React.Component {
 
   renderPlayerInfo = player => {
     if (player) {
-      // debugger
-      // console.log(this.props.team);
+      console.log(this.props.team);
+      debugger
       return (
-        <div className="ui content" onClick={() => this.removeFromTeam(player)}>
-          <strong className="header">{player.name}</strong>
-          <div className="description">
-            Team: {player.team} |
-            Position: {player.position} |
-            Bats: {player.batting_stance} |
-            BAA: {player.season_batting_avg} |
-            SLG: {player.season_slugging_pct} |
-            1B: {player.season_hits} |
-            2B: {player.season_doubles} |
-            3B: {player.season_triples} |
-            HR: {player.season_home_runs} |
-            RBI: {player.season_rbi} |
-            Runs: {player.season_runs} |
-            Walks: {player.season_walks}
-          </div>
-        </div>
+        <Table.Row>
+          <Table.Cell>{player.name}</Table.Cell>
+          <Table.Cell>{this.renderTeamLogo(player)}</Table.Cell>
+          <Table.Cell>{player.batting_stance}</Table.Cell>
+          <Table.Cell>{player.season_batting_avg}</Table.Cell>
+          <Table.Cell>{player.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{player.season_hits}</Table.Cell>
+          <Table.Cell>{player.season_doubles}</Table.Cell>
+          <Table.Cell>{player.season_triples}</Table.Cell>
+          <Table.Cell>{player.season_home_runs}</Table.Cell>
+          <Table.Cell>{player.season_rbi}</Table.Cell>
+          <Table.Cell>{player.season_runs}</Table.Cell>
+          <Table.Cell>{player.season_walks}</Table.Cell>
+        </Table.Row>
       )
     } else {
       return null
@@ -81,44 +147,143 @@ class Team extends React.Component {
 
   render() {
     return (
-      <div className="ui list inverted">
-        <div className="item" >
-          <b className="icon">C:</b>
-            {this.renderPlayerInfo(this.props.team.catcher)}
-        </div>
-        <div className="item" >
-          <b className="icon">1B:</b>
-            {this.renderPlayerInfo(this.props.team.first)}
-        </div>
-        <div className="item" >
-          <b className="icon">2B:</b>
-            {this.renderPlayerInfo(this.props.team.second)}
-        </div>
-        <div className="item" >
-          <b className="icon">3B:</b>
-            {this.renderPlayerInfo(this.props.team.third)}
-        </div>
-        <div className="item" >
-          <b className="icon">SS:</b>
-            {this.renderPlayerInfo(this.props.team.short)}
-        </div>
-        <div className="item" >
-          <b className="icon">OF:</b>
-            {this.renderPlayerInfo(this.props.team.out1)}
-        </div>
-        <div className="item" >
-          <b className="icon">OF:</b>
-            {this.renderPlayerInfo(this.props.team.out2)}
-        </div>
-        <div className="item" >
-          <b className="icon">OF:</b>
-            {this.renderPlayerInfo(this.props.team.out3)}
-        </div>
-        <div className="item" >
-          <b className="icon">XH:</b>
-            {this.renderPlayerInfo(this.props.team.extra)}
-        </div>
-      </div>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>Catcher</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.name}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher ? this.renderTeamLogo(this.props.team.catcher) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.catcher.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>First Base</Table.Cell>
+          <Table.Cell>{this.props.team.first.name}</Table.Cell>
+          <Table.Cell>{this.props.team.first ? this.renderTeamLogo(this.props.team.first) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.first.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.first.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Second Base</Table.Cell>
+          <Table.Cell>{this.props.team.second.name}</Table.Cell>
+          <Table.Cell>{this.props.team.second ? this.renderTeamLogo(this.props.team.second) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.second.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.second.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Third Base</Table.Cell>
+          <Table.Cell>{this.props.team.third.name}</Table.Cell>
+          <Table.Cell>{this.props.team.third ? this.renderTeamLogo(this.props.team.third) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.third.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.third.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Short Stop</Table.Cell>
+          <Table.Cell>{this.props.team.short.name}</Table.Cell>
+          <Table.Cell>{this.props.team.short ? this.renderTeamLogo(this.props.team.short) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.short.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.short.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Outfield</Table.Cell>
+          <Table.Cell>{this.props.team.out1.name}</Table.Cell>
+          <Table.Cell>{this.props.team.out1 ? this.renderTeamLogo(this.props.team.out1) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.out1.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Outfield</Table.Cell>
+          <Table.Cell>{this.props.team.out2.name}</Table.Cell>
+          <Table.Cell>{this.props.team.out2 ? this.renderTeamLogo(this.props.team.out2) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.out2.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Outfield</Table.Cell>
+          <Table.Cell>{this.props.team.out3.name}</Table.Cell>
+          <Table.Cell>{this.props.team.out3 ? this.renderTeamLogo(this.props.team.out3) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.out3.season_walks}</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>XH</Table.Cell>
+          <Table.Cell>{this.props.team.extra.name}</Table.Cell>
+          <Table.Cell>{this.props.team.extra ? this.renderTeamLogo(this.props.team.extra) : null}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.batting_stance}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_batting_avg}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_slugging_pct}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_hits}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_doubles}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_triples}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_home_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_rbi}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_runs}</Table.Cell>
+          <Table.Cell>{this.props.team.extra.season_walks}</Table.Cell>
+        </Table.Row>
+      </Table.Body>
     )
   }
 }
@@ -146,3 +311,42 @@ function mapDispatchToProps(dispatch){
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Team)
+
+// <div className="ui list inverted">
+//   <div className="item" >
+//     <b className="icon">C:</b>
+//       {this.renderPlayerInfo(this.props.team.catcher)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">1B:</b>
+//       {this.renderPlayerInfo(this.props.team.first)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">2B:</b>
+//       {this.renderPlayerInfo(this.props.team.second)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">3B:</b>
+//       {this.renderPlayerInfo(this.props.team.third)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">SS:</b>
+//       {this.renderPlayerInfo(this.props.team.short)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">OF:</b>
+//       {this.renderPlayerInfo(this.props.team.out1)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">OF:</b>
+//       {this.renderPlayerInfo(this.props.team.out2)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">OF:</b>
+//       {this.renderPlayerInfo(this.props.team.out3)}
+//   </div>
+//   <div className="item" >
+//     <b className="icon">XH:</b>
+//       {this.renderPlayerInfo(this.props.team.extra)}
+//   </div>
+// </div>

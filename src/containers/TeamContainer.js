@@ -1,6 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 import Team from "../components/Team"
+import { Segment, Table } from "semantic-ui-react"
+
 
 class TeamContainer extends React.Component {
 
@@ -18,6 +20,7 @@ class TeamContainer extends React.Component {
 
   renderTeam = () => {
     console.log(this.props.team);
+    debugger
     return this.props.team.map(player => {
       return <Team key={player.id} player={player}/>
     })
@@ -30,9 +33,28 @@ class TeamContainer extends React.Component {
     Your Team
     <br/>
     <br/>
-      <div className="player-list">
-        <Team />
-      </div>
+      <Table compact celled>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Position</Table.HeaderCell>
+            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell>Team</Table.HeaderCell>
+            <Table.HeaderCell>Bats</Table.HeaderCell>
+            <Table.HeaderCell>BAA</Table.HeaderCell>
+            <Table.HeaderCell>SLG</Table.HeaderCell>
+            <Table.HeaderCell>Singles</Table.HeaderCell>
+            <Table.HeaderCell>Doubles</Table.HeaderCell>
+            <Table.HeaderCell>Triples</Table.HeaderCell>
+            <Table.HeaderCell>Home Runs</Table.HeaderCell>
+            <Table.HeaderCell>RBI</Table.HeaderCell>
+            <Table.HeaderCell>Runs</Table.HeaderCell>
+            <Table.HeaderCell>Walks</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+          <Team />
+
+      </Table>
     </div>
     )
   }
