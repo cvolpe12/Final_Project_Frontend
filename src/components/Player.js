@@ -381,29 +381,29 @@ class Player extends React.Component {
 // </div>
 // </div>
 
-function mapStateToProps(state){
-  return {
-    currentUser: state.currentUser,
-    currentTeam: state.currentTeam,
-    team: state.team
-  }
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    // addPlayerToTeam: (player) => {dispatch({type: "ADD_PLAYER_TO_TEAM", payload: player })}
-  //   addCatcher: (player) => {dispatch({type: "SELECT_CATCHER", payload: player })},
-  //   addFirst: (player) => {dispatch({type: "SELECT_FIRST", payload: player })},
-  //   addSecond: (player) => {dispatch({type: "SELECT_SECOND", payload: player })},
-  //   addThird: (player) => {dispatch({type: "SELECT_THIRD", payload: player })},
-  //   addShort: (player) => {dispatch({type: "SELECT_SHORT", payload: player })},
-  //   addOF1: (player) => {dispatch({type: "SELECT_OUTFIELD1", payload: player })},
-  //   addOF2: (player) => {dispatch({type: "SELECT_OUTFIELD2", payload: player })},
-  //   addOF3: (player) => {dispatch({type: "SELECT_OUTFIELD3", payload: player })},
-  //   addExtra: (player) => {dispatch({type: "SELECT_EXTRA", payload: player })},
-  //   addPlayerToCurrentTeam: (player) => {dispatch({type: "Add_PLAYER_CURRENT_TEAM", payload: player })}
-  }
-}
+// function mapStateToProps(state){
+//   return {
+//     currentUser: state.currentUser,
+//     currentTeam: state.currentTeam,
+//     team: state.team
+//   }
+// }
+//
+// function mapDispatchToProps(dispatch){
+//   return {
+//     // addPlayerToTeam: (player) => {dispatch({type: "ADD_PLAYER_TO_TEAM", payload: player })}
+//   //   addCatcher: (player) => {dispatch({type: "SELECT_CATCHER", payload: player })},
+//   //   addFirst: (player) => {dispatch({type: "SELECT_FIRST", payload: player })},
+//   //   addSecond: (player) => {dispatch({type: "SELECT_SECOND", payload: player })},
+//   //   addThird: (player) => {dispatch({type: "SELECT_THIRD", payload: player })},
+//   //   addShort: (player) => {dispatch({type: "SELECT_SHORT", payload: player })},
+//   //   addOF1: (player) => {dispatch({type: "SELECT_OUTFIELD1", payload: player })},
+//   //   addOF2: (player) => {dispatch({type: "SELECT_OUTFIELD2", payload: player })},
+//   //   addOF3: (player) => {dispatch({type: "SELECT_OUTFIELD3", payload: player })},
+//   //   addExtra: (player) => {dispatch({type: "SELECT_EXTRA", payload: player })},
+//   //   addPlayerToCurrentTeam: (player) => {dispatch({type: "Add_PLAYER_CURRENT_TEAM", payload: player })}
+//   }
+// }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Player)
